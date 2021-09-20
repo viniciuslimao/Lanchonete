@@ -40,9 +40,6 @@ namespace Lnc
             this.buttonExc = new System.Windows.Forms.Button();
             this.buttonFzr = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +119,7 @@ namespace Lnc
             this.buttonEdit.TabIndex = 7;
             this.buttonEdit.Text = "Editar";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonExc
             // 
@@ -133,6 +131,7 @@ namespace Lnc
             this.buttonExc.TabIndex = 8;
             this.buttonExc.Text = "Excluir";
             this.buttonExc.UseVisualStyleBackColor = true;
+            this.buttonExc.Click += new System.EventHandler(this.buttonExc_Click);
             // 
             // buttonFzr
             // 
@@ -149,31 +148,13 @@ namespace Lnc
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnId,
-            this.ColumnNome,
-            this.ColumnTel});
             this.dataGridView1.GridColor = System.Drawing.Color.Chocolate;
             this.dataGridView1.Location = new System.Drawing.Point(38, 316);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(473, 131);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // ColumnId
-            // 
-            this.ColumnId.HeaderText = "Id";
-            this.ColumnId.Name = "ColumnId";
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
-            // 
-            // ColumnTel
-            // 
-            this.ColumnTel.HeaderText = "Telefone";
-            this.ColumnTel.Name = "ColumnTel";
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Editar);
             // 
             // labelTitulo
             // 
@@ -224,9 +205,6 @@ namespace Lnc
         private System.Windows.Forms.Button buttonExc;
         private System.Windows.Forms.Button buttonFzr;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTel;
         private System.Windows.Forms.Label labelTitulo;
     }
 }
