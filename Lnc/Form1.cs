@@ -18,16 +18,26 @@ namespace Lnc
         {
             InitializeComponent();
         }
-        public void CarregarDados()
+        private void CarregarDados()
         {
-            c.IdCliente = int.Parse(textBoxId.Text);
+            var MaxId = listarCliente.Max(x => x.IdCliente);
+            c.IdCliente = MaxId + 1;
             c.Nome = textBoxNome.Text;
             c.Telefone = textBoxTel.Text;
             listarCliente.Add(c);
-
-            dataGridView1.DataSource = "";
+            dataGridView1.DataSource = null;
             dataGridView1.DataSource = listarCliente;
         }
+        //public void CarregarDados()
+        //{
+        //    c.IdCliente = int.Parse(textBoxId.Text);
+        //    c.Nome = textBoxNome.Text;
+        //    c.Telefone = textBoxTel.Text;
+        //    listarCliente.Add(c);
+
+        //    dataGridView1.DataSource = "";
+        //    dataGridView1.DataSource = listarCliente;
+        //}
 
         private void buttonCad_Click(object sender, EventArgs e)
         {
